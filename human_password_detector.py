@@ -1,11 +1,14 @@
 import pandas as pd
 import numpy as np
 import lightgbm as lgb
+
 import argparse
+
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, classification_report
 from sklearn.metrics import roc_curve
-from passwords_features import extract_features
+
+from password_features import extract_features
 
 def main(args):
     data = pd.read_csv(args.dataset)
@@ -123,8 +126,11 @@ def main(args):
     plt.xlabel('Feature Importance')
     plt.ylabel('Feature Names')
 
+    plt.savefig('feature_importance_plot.png', bbox_inches='tight')
+
     # Show plot
     plt.show()
+    
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Train LightGBM model and predict if text is likely a human-created password.')
