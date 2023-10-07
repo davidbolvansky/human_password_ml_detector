@@ -1,2 +1,2 @@
-# human_password_ml_detector
-Detect if a given text as a likely human-created password using LightGBM
+# Human Password ML Detector
+Decide if a given text as a likely human-created password. Powered by LightGBM gradient-boosting framework.
